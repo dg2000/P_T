@@ -35,7 +35,7 @@ int main()
 
   double z = 1.0/100000000000000.0;
 
-  double n = 1.0;
+  double n = 3.4;
 
   bool llegoAfrontera = false;
 
