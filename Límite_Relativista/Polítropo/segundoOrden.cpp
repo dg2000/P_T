@@ -26,19 +26,19 @@ double g(double n, double m, double alfa, double beta, double r, double y1, doub
 
 int main()
 {
-  double h = 1.0e-3;
+  double h = 1.0e-1;
 
   double densidadCentral = 1.0;
   
-  double n = 1.5;
+  double n = 2.0;
   
   double m = 3.0;
 
-  double alfa = 2.0;
+  double alfa = 1.0;
 
-  double beta = 3.0;
+  double beta = 1.0;
 
-  double r = 1.0e-1;
+  double r = 1.0e-3;
 
   double y1 = densidadCentral;
 
@@ -71,7 +71,7 @@ int main()
       y2 = y2 + h*(y2_k1 + 2.0*y2_k2 + 2.0*y2_k3 + y2_k4)/6.0;
 
 
-      if (isnan(y2) || (vy1 > densidadCentral*0.0 && y1 < densidadCentral*0.0) )
+      if (isnan(y2) || (y1 < 0.01) ) 
 	{
 	  
 	  llegoAfrontera = true;
