@@ -8,7 +8,7 @@ double f(double n, double m, double alfa, double beta, double r, double y1, doub
 {
   double pi = 3.14159;
 
-  double G = 6.67349e-11;
+  double G = 6.67191e-11;
   
   double z = beta*(m*m - 1.0)*pow(y1, (1.0/m) - 2.0)*y2*y2/(m*m)  +  2.0*alfa*pow(y1, 1.0/n)/(r*r)  +  2.0*alfa*pow(y1, (1.0/n) - 1.0)*y2/(n*r);
 
@@ -24,21 +24,9 @@ double g(double n, double m, double alfa, double beta, double r, double y1, doub
 }
 
 
-int main()
+double solucion(double densidadCentral, double n, double m, double alfa, double beta, double h)
 {
-  double h = 1.0e-1;
-
-  double densidadCentral = 1.0;
-  
-  double n = 2.0;
-  
-  double m = 3.0;
-
-  double alfa = 1.0;
-
-  double beta = 1.0;
-
-  double r = 1.0e-3;
+  double r = h*10.0;
 
   double y1 = densidadCentral;
 
@@ -71,21 +59,48 @@ int main()
       y2 = y2 + h*(y2_k1 + 2.0*y2_k2 + 2.0*y2_k3 + y2_k4)/6.0;
 
 
-      if (isnan(y2) || (y1 < 0.01) ) 
+      if (isnan(y2) || (y1 < 0.1) || vy1 - y1 < 0) 
 	{
 	  
 	  llegoAfrontera = true;
 
-	  cout << densidadCentral << " " << alfa << " " << beta << endl;
-	  cout << n << " " << m << " " << m << endl;
 	}
-      else
-	{
-	  cout << r << " " << y1 << " " << y2 << endl;
-	}
-
     }
 
-  return 0;
+  double M = -4.0*densidadCentral*r*r*y2;
 
+  double* resultado = new double[3]; resultado[0] = r; resultado[1] = y2; resultado[2] = M;
+
+  return r;
+
+}
+
+int main()
+{
+  int L = 50;
+  
+  double indice_inicial = 1.0;
+
+  double indice_final = 50.0;
+
+  double salto = (indice_final - indice_inicial)/(L-1.0);
+
+  double h = 1.0;
+
+  double densidadCentral = 1.0;
+ 
+  double alfa = 1.0;
+
+  double beta = 1.0;
+
+  for(int i = 0; i <= L-1.0; i++)
+    {
+      for(int j = 0; j <= L-1.0; j++)
+	{
+	  cout << solucion(densidadCentral, indice_inicial + salto*j, indice_inicial + salto*i, alfa, beta, h) << " ";
+	}
+      cout << endl;
+    } 
+
+  return 0;
 }
