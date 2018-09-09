@@ -77,11 +77,11 @@ double solucion(double densidadCentral, double n, double m, double alfa, double 
 
 int main()
 {
-  int L = 50;
+  int L = 31;
   
-  double indice_inicial = 1.0;
+  double indice_inicial = 1.0e-3;
 
-  double indice_final = 50.0;
+  double indice_final = 30.0;
 
   double salto = (indice_final - indice_inicial)/(L-1.0);
 
@@ -97,7 +97,7 @@ int main()
     {
       for(int j = 0; j <= L-1.0; j++)
 	{
-	  cout << solucion(densidadCentral, indice_inicial + salto*j, indice_inicial + salto*i, alfa, beta, h) << " ";
+	  cout << solucion(densidadCentral, indice_inicial + salto*i, 1.5, alfa*1.0e-5 + 10.0*j*alfa/(L-1.0), alfa, h) << " ";
 	}
       cout << endl;
     } 

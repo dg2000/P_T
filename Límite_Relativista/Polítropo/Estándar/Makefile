@@ -1,5 +1,5 @@
 askjdhask: 
 	c++ segundoOrden.cpp -o deriva2
-	./deriva2 > r_p_p*.txt
+	./deriva2 > z_w_w*.txt
 	python DanielMelo_Grafica.py
 	rm deriva2
