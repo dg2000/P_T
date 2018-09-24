@@ -1,6 +1,6 @@
 jkashdh:
 	c++ segundoOrden.cpp -o variar
-	./variar > matriz.txt
-	python Colores.py
+	./variar > masa.txt
+	python grafica.py
 	rm variar
 
