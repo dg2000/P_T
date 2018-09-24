@@ -19,13 +19,13 @@ double g(double n, double m, double alfa, double beta, double z, double y1, doub
 }
 
 
-double solucion(double h, double zo, double densidadCentral, double n, double m, double alfa, double beta)
+int main()
 {
   double h = 1.0e-4;
   double zo = 1.0e-4;
   double densidadCentral = 1.0;
-  double n = 2.0;
-  double m = 1.5;
+  double n = 1.0e-30;
+  double m = 1.0e-30;
   double alfa = 1.0;
   double beta = 1.0;
 
@@ -62,40 +62,22 @@ double solucion(double h, double zo, double densidadCentral, double n, double m,
       if (isnan(y2) || (y1 < 0.0) || z>10.0)
 	{ 
 	  llegoAfrontera = true;
+	  
+	  cout << densidadCentral << " " << alfa << " " << beta << endl;
+	  cout << n << " " << m << " " << m << endl;
 	}
-
-    }
-
-  return z*z*y2;
-
-}
-
-
-int main()
-{
-  double h = 1.0e-4;
-  double zo = 1.0e-4;
-  double densidadCentral = 1.0;
-  double alfa_inicial = 1.0;
-  double beta_inicial = 1.0;
-  double n_inicial = 1.0;
-  double m_inicial = 1.5;
-
-  double n_final = 2.0;
-  double L = n_final - n_inicial;
-  double cambio = 0.05;
-  
-  for(int i = 0; n_inicial + i*salto < n_final; i++)
-    {
-      double nueva = solucion(h, zo, densidadCentral, n_inicial + i*salto, m_inicial, alfa_inicial, beta_inicial);
-      double base = solucion(h, zo, densidadCentral, m_inicial, m_inicial, alfa_inicial, beta_inicial);
-      double masa = nueva/base;
-      
-      cout << n_inicial + i*salto << " " << masa << endl;
+      else
+	{
+	  cout << z << " " << y1 << " " << y2 << endl;
+	}
     }
 
   return 0;
+
 }
+
+
+
 
 
   
