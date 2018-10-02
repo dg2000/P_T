@@ -68,8 +68,8 @@ int main()
   double h = 1.0e-4;
   double zo = 1.0e-4;
   double densidadCentral = 1.0;
-  double n_inicial = 1.0e-5;
-  double m_inicial = 1.5;
+  double n_inicial = 1.0;
+  double m_inicial = 3.0;
   double alfa_inicial = 1.0;
   double beta_inicial = 1.0;
 

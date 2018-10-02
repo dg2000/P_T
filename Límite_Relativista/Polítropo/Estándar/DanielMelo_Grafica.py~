@@ -21,7 +21,7 @@ plt.title("w vs z")
 plt.xlabel("z")
 plt.ylabel("w")
 plt.legend(loc=0)
-plt.savefig("n="+str(r[a-1])+"|m="+str(y1[a-1])+"|alfa="+str(y1[a-2])+"|beta="+str(y2[a-2])+"(w_vs_z).png")
+plt.savefig("n="+str(r[a-1])+"|m="+str(y1[a-1])+"|a="+str(y1[a-2])+"|b="+str(y2[a-2])+"(w_vs_z).png")
 
 
 plt.figure()
@@ -30,7 +30,7 @@ plt.title("w' vs z")
 plt.xlabel("z")
 plt.ylabel("w'")
 plt.legend(loc=0)
-plt.savefig("n="+str(r[a-1])+"|m="+str(y1[a-1])+"|alfa="+str(y1[a-2])+"|beta="+str(y2[a-2])+"(w'_vs_z).png")
+plt.savefig("n="+str(r[a-1])+"|m="+str(y1[a-1])+"|a="+str(y1[a-2])+"|b="+str(y2[a-2])+"(w'_vs_z).png")
 
 
 plt.figure()
@@ -39,4 +39,4 @@ plt.title("w' vs w")
 plt.xlabel("w")
 plt.ylabel("w'")
 plt.legend(loc=0)
-plt.savefig("n="+str(r[a-1])+"|m="+str(y1[a-1])+"|alfa="+str(y1[a-2])+"|beta="+str(y2[a-2])+"(w'_vs_w).png")
+plt.savefig("n="+str(r[a-1])+"|m="+str(y1[a-1])+"|a="+str(y1[a-2])+"|b="+str(y2[a-2])+"(w'_vs_w).png")

@@ -24,8 +24,8 @@ int main()
   double h = 1.0e-4;
   double zo = 1.0e-4;
   double densidadCentral = 1.0;
-  double n = 1.0e-30;
-  double m = 1.0e-30;
+  double n = 10.0;
+  double m = 10.0;
   double alfa = 1.0;
   double beta = 1.0;
 
@@ -66,6 +66,7 @@ int main()
 	  cout << densidadCentral << " " << alfa << " " << beta << endl;
 	  cout << n << " " << m << " " << m << endl;
 	}
+
       else
 	{
 	  cout << z << " " << y1 << " " << y2 << endl;
