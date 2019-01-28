@@ -1,0 +1,24 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+indices = np.loadtxt("masa.txt")[:, 0]
+masa = np.loadtxt("masa.txt")[:, 1]
+
+r = len(masa)
+otra = ""
+var = ""
+if(masa[r-2] == 0.0):
+	otra = "n"
+	var = "m"
+else:
+	otra = "m"
+	var = "n"
+
+plt.figure()
+plt.scatter(indices[:r-4], masa[:r-4], s=0.8, label="M/Mch vs " + var)
+plt.title("M/Mch vs " + var)
+plt.xlabel(var)
+plt.ylabel("M/Mch")
+plt.legend(loc=0)
+#plt.savefig("alfa=1.0|beta=1.0|(M/Mch vs nt).png")
+plt.savefig("alfa=" + indices[r-3] + "|beta=" + masa[r-3] + "|" + otra + "=" + indices[r-2] + "|" + var + "[" + indices[r-1] + "," + masa[r-1] + "]|(M%Mch vs " + masa[r-2] + ").png")
